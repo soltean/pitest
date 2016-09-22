@@ -2,15 +2,10 @@ package com.so.pitest;
 
 public class Human {
 
-    private final int numberOfChocolatesCanEatPerDay;
+    private final int numberOfChocolatesCanEatPerDay = 5;
     private int numberOfChocolateEatenToday;
 
     public Human() {
-        numberOfChocolatesCanEatPerDay = 5;
-    }
-
-    public boolean canTravelWithTheSpeedOfLight(int currentTravelSpeed) {
-        return currentTravelSpeed >= 299792458;
     }
 
     public int getNumberOfAirplanesHeCanLift() {

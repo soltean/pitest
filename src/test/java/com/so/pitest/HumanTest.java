@@ -7,11 +7,8 @@ import static junit.framework.TestCase.assertTrue;
 public class HumanTest {
 
     @Test
-    public void testHumanCapabilities() {
+    public void testHumanCannotLiftPlanes() {
         Human human = new Human();
-        assertTrue("Humans must be normal, cannot travel with the speed of light", !human.canTravelWithTheSpeedOfLight(1));
-        assertTrue("Speedy Gonzales is not human", human.canTravelWithTheSpeedOfLight(299792458));
-        assertTrue("Flash is not human", human.canTravelWithTheSpeedOfLight(999999999));
         assertTrue("Humans should not be able to lift planes", human.getNumberOfAirplanesHeCanLift() == 0);
     }
 
@@ -27,6 +24,14 @@ public class HumanTest {
         int number = 3;
         human.eatChocolate(number);
         assertTrue("Human not full", human.getNumberOfChocolateEatenToday() == number);
+    }
+
+    @Test
+    public void testHumanCanEatHisLimit() {
+        Human human = new Human();
+        int number = 5;
+        human.eatChocolate(number);
+        assertTrue("Human not full", human.getNumberOfChocolateEatenToday() == human.getNumberOfChocolatesCanEatPerDay());
     }
 
     @Test
